@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/sdgp Code work/SDGP APP/app/src/main/res/drawable/continue_button.xml" value="0.207" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/sdgp Code work/SDGP APP/app/src/main/res/drawable/custom_button_logins.xml" value="0.207" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/sdgp Code work/SDGP APP/app/src/main/res/drawable/edit.xml" value="0.207" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/sdgp Code work/SDGP APP/app/src/main/res/drawable/get_started.xml" value="0.207" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/sdgp Code work/SDGP APP/app/src/main/res/drawable/user.xml" value="0.207" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/sdgp Code work/SDGP APP/app/src/main/res/drawable/user_pic_welcome.xml" value="0.207" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/sdgp Code work/SDGP APP/app/src/main/res/layout-v28/welcomePage.xml" value="0.25" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/sdgp Code work/SDGP APP/app/src/main/res/layout-v28/welcome_page.xml" value="0.25" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/sdgp Code work/SDGP APP/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.1606425702811245" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/sdgp Code work/SDGP APP/app/src/main/res/layout-w936dp/activity_login.xml" value="0.1875" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/sdgp Code work/SDGP APP/app/src/main/res/layout/activity_login.xml" value="0.375" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/sdgp Code work/SDGP APP/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/sdgp Code work/SDGP APP/app/src/main/res/layout/content_scrolling.xml" value="0.3387096774193548" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/sdgp Code work/SDGP APP/app/src/main/res/layout/home_page.xml" value="0.3387096774193548" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/sdgp Code work/SDGP APP/app/src/main/res/layout/login_page.xml" value="0.4" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/sdgp Code work/SDGP APP/app/src/main/res/layout/signup_page.xml" value="0.4" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/sdgp Code work/SDGP APP/app/src/main/res/layout/user_welcome.xml" value="0.264" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
