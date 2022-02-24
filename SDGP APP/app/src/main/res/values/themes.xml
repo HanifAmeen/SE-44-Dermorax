@@ -14,12 +14,12 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Theme.MobileAPP.NoActionBar">
-        <item name="windowActionBar">false</item>
+    <style name="Theme.MobileAPP.NoActionBar" parent="Theme.MaterialComponents.DayNight.DarkActionBar" >
+        <item name="windowActionBar">true</item>
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.MobileAPP.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.MobileAPP.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
 
-    <style name="Theme.MobileAPP.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.MobileAPP.PopupOverlay" parent="ThemeOverlay.MaterialComponents.ActionBar" />
 </resources>

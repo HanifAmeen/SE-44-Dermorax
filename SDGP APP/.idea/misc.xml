@@ -3,6 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/SDGP APP/app/src/main/res/drawable/ic_add.xml" value="0.2215" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/SDGP APP/app/src/main/res/layout/activity_home_page.xml" value="0.4" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/SDGP APP/app/src/main/res/layout/fragment_chatbot.xml" value="0.3239247311827957" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/SDGP APP/app/src/main/res/layout/fragment_home.xml" value="0.3239247311827957" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/SDGP APP/app/src/main/res/layout/fragment_mole_map.xml" value="0.3239247311827957" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/SDGP APP/app/src/main/res/layout/fragment_news.xml" value="0.3239247311827957" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/SDGP APP/app/src/main/res/layout/fragment_previous_predictions.xml" value="0.3239247311827957" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/SDGP APP/app/src/main/res/layout/home_fragment.xml" value="0.3239247311827957" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/SDGP APP/app/src/main/res/layout/home_new_prediction.xml" value="0.3239247311827957" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/SDGP APP/app/src/main/res/layout/home_page.xml" value="0.3239247311827957" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/SDGP APP/app/src/main/res/layout/user_welcome.xml" value="0.3239247311827957" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/SDGP APP/app/src/main/res/menu-v26/bottom_nav_menu.xml" value="0.375" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/SDGP APP/app/src/main/res/menu/menu_home_page.xml" value="0.375" />
         <entry key="..\:/Users/Janidu Chathumina/Desktop/sdgp Code work/SDGP APP/app/src/main/res/drawable/continue_button.xml" value="0.207" />
         <entry key="..\:/Users/Janidu Chathumina/Desktop/sdgp Code work/SDGP APP/app/src/main/res/drawable/custom_button_logins.xml" value="0.207" />
         <entry key="..\:/Users/Janidu Chathumina/Desktop/sdgp Code work/SDGP APP/app/src/main/res/drawable/edit.xml" value="0.207" />
