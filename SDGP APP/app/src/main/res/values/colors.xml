@@ -10,6 +10,8 @@
     <color name="dark_pruple">#241332</color>
     <color name="light_pruple">#9599B3</color>
     <color name="light_pink">#D47FA6</color>
+    <color name="light_dark_purple">#352641</color>
     <color name="pale_white">#F1F0F2</color>
     <color name="grey">#E1E1E1</color>
+    <color name="nav_bar_pruple">#C2C4D3</color>
 </resources>

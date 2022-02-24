@@ -3,6 +3,9 @@ pluginManagement {
         gradlePluginPortal()
         google()
         mavenCentral()
+        maven {url 'https://jitpack.io'}
+
+
     }
 }
 dependencyResolutionManagement {
@@ -10,6 +13,14 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven {url 'https://jitpack.io'}
+        //noinspection JcenterRepositoryObsolete
+        jcenter() {
+            content {
+                includeModule("com.theartofdev.edmodo", "android-image-cropper")
+                includeModule("com.google.android.material","material:1.6.0-alpha02")
+            }
+        }
     }
 }
 rootProject.name = "Mobile APP"

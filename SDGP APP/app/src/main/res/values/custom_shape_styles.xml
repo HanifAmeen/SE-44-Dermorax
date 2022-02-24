@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <style name="userDP_shape_overlay">
+        <item name="android:topRightRadius">51sp</item>
+        <item name="android:bottomLeftRadius">21sp</item>
+    </style>
+</resources>
