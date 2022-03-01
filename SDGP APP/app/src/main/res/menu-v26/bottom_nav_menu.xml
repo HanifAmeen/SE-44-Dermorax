@@ -2,34 +2,39 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/nav_home"
+        android:title="@string/home"
+        android:enabled="true"
+        android:icon="@drawable/ic_home" />
+
+    <item
         android:id="@+id/nav_news_feed"
-        android:title="News"
+        android:title="@string/news"
         android:iconTint="@color/white"
         android:enabled="true"
         android:icon="@drawable/ic_news_feed" />
 
+
+    <item
+        android:id="@+id/nav_space"
+        android:title="@string/space"
+        android:enabled="false" />
+
+
+
     <item
         android:id="@+id/nav_previous_predictions"
-        android:title="Predictions"
+        android:title="@string/predictions"
         android:enabled="true"
         android:icon="@drawable/ic_user" />
 
 
     <item
-        android:id="@+id/nav_space"
-        android:title="Space"
-        android:enabled="false" />
-
-    <item
         android:id="@+id/nav_mole_mapper"
-        android:title="Mole Map"
+        android:title="@string/mole_map"
         android:enabled="true"
         android:icon="@drawable/ic_mole_mapper" />
 
-    <item
-        android:id="@+id/nav_chatbot"
-        android:title="ChatBot"
-        android:enabled="true"
-        android:icon="@drawable/ic_chat_bot" />
+
 
 </menu>
