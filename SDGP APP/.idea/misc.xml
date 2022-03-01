@@ -3,6 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/drawable/email.xml" value="0.197" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/drawable/ic_home.xml" value="0.197" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/drawable/ic_menu.xml" value="0.197" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout-land/fragment_new_prediction.xml" value="0.25104166666666666" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout-land/home_page.xml" value="0.176" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/fragment_chatbot.xml" value="0.375" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/fragment_new_prediction.xml" value="0.152" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/home_page.xml" value="0.2" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/login_page.xml" value="0.375" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/user_welcome.xml" value="0.375" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/menu-v26/bottom_nav_menu.xml" value="0.1875" />
         <entry key="..\:/Users/Janidu Chathumina/Desktop/SDGP APP/app/src/main/res/drawable/ic_add.xml" value="0.2215" />
         <entry key="..\:/Users/Janidu Chathumina/Desktop/SDGP APP/app/src/main/res/layout/activity_home_page.xml" value="0.4" />
         <entry key="..\:/Users/Janidu Chathumina/Desktop/SDGP APP/app/src/main/res/layout/fragment_chatbot.xml" value="0.3239247311827957" />

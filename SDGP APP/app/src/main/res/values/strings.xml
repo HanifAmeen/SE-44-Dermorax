@@ -26,7 +26,7 @@
     <string name="welcome_name">Welcome, Lucas</string>
     <string name="title_activity_home_page">HomePage</string>
     <string name="action_settings">Settings</string>
-    <string name="todo">TODO</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="predictions">Predictions</string>
@@ -35,4 +35,14 @@
     <string name="chatbot">ChatBot</string>
     <string name="news">News</string>
     <string name="home">Home</string>
+
+    <string name="new_prediction">New Prediction</string>
+    <string name="capture">Capture</string>
+    <string name="dermorax_spaced">D E R M O R A X</string>
+    <string name="todo">TODO</string>
+
+    <string name="mole_map">Mole Map</string>
+    <string name="upload">upload</string>
+
+
 </resources>
