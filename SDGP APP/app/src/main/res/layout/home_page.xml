@@ -11,7 +11,7 @@
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="626dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
-        android:backgroundTint="@color/purple_200"
+        android:backgroundTint="@color/float_btn_color"
         app:borderWidth="0dp"
         android:contentDescription="@string/todo"
         android:src="@drawable/ic_add"
@@ -59,7 +59,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/top_bar_purple">
+        android:background="@color/top_bar_purple"
+        android:outlineAmbientShadowColor="@color/black">
 
         <ImageView
             android:id="@+id/imageView2"
@@ -78,7 +79,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat_bold"
             android:text="@string/dermorax"
-            android:textColor="#838383"
+            android:textColor="@color/nav_bar_pruple"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

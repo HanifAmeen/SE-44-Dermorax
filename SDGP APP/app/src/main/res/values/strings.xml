@@ -36,13 +36,14 @@
     <string name="news">News</string>
     <string name="home">Home</string>
 
-    <string name="new_prediction">New Prediction</string>
+    <string name="new_prediction">NEW PREDICTION</string>
     <string name="capture">Capture</string>
     <string name="dermorax_spaced">D E R M O R A X</string>
     <string name="todo">TODO</string>
 
     <string name="mole_map">Mole Map</string>
     <string name="upload">upload</string>
+    <string name="predict">PREDICT</string>
 
 
 </resources>
