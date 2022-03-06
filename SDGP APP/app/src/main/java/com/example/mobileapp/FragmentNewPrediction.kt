@@ -1,8 +1,10 @@
 package com.example.mobileapp
 
+import android.Manifest.permission.CAMERA
 import android.app.Application
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Camera
 import android.net.Uri
@@ -19,11 +21,12 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContract
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.setPadding
 import androidx.fragment.app.Fragment
 import com.theartofdev.edmodo.cropper.CropImage
 import java.util.jar.Manifest
 
-class FragmentNewPrediction : Fragment() {
+class FragmentNewPrediction : Fragment()  {
 
     private val cropActivityContract = object : ActivityResultContract<Any?, Uri?>(){
         override fun createIntent(context: Context, input: Any?): Intent {
@@ -42,6 +45,9 @@ class FragmentNewPrediction : Fragment() {
     private lateinit var cameraView: FrameLayout
     private lateinit var captureUploadBtn: ToggleButton
     private val cameraRequestId = 1222
+    private lateinit var backBtn: Button
+    private lateinit var predictBtn: Button
+    private var homeFragment = FragmentHome()
 
 
     override fun onCreateView(
@@ -56,6 +62,8 @@ class FragmentNewPrediction : Fragment() {
         captureUploadBtn= view.findViewById(R.id.id_uploadCaptureBtn)
         imageView= view.findViewById(R.id.id_imageView)
         cameraView= view.findViewById(R.id.id_imageView_frame)
+        backBtn= view.findViewById(R.id.id_back_btn)
+        predictBtn= view.findViewById(R.id.id_predict_btn)
 
         cropActivityResultLauncher = registerForActivityResult(cropActivityContract){
             it?.let { uri ->
@@ -65,18 +73,23 @@ class FragmentNewPrediction : Fragment() {
         }
 
         imageView.isClickable=true
+
         imageView.setOnClickListener {
             val cameraInt = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             startActivityForResult(cameraInt,cameraRequestId)
         }
 
+
+
         captureUploadBtn.setOnCheckedChangeListener{ _, isChecked ->
 
             if (isChecked){
                 imageView.isClickable=false
+                imageView.setImageDrawable(null)
                 cropActivityResultLauncher.launch(null)
             }else{
 
+                imageView.setImageResource(R.drawable.camera_bk2)
                 imageView.isClickable=true
                 imageView.setOnClickListener {
                     val cameraInt = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
@@ -84,6 +97,16 @@ class FragmentNewPrediction : Fragment() {
                 }
 
             }
+        }
+
+        backBtn.setOnClickListener {
+            val transaction = requireFragmentManager().beginTransaction()
+            transaction.replace(R.id.fragment_container,homeFragment)
+            transaction.commit()
+        }
+
+        predictBtn.setOnClickListener {
+
         }
 
 
@@ -99,10 +122,12 @@ class FragmentNewPrediction : Fragment() {
         if (requestCode==cameraRequestId){
             val image:Bitmap=data?.extras?.get("data") as Bitmap
             imageView.setImageBitmap(image)
+
         }
 
-
     }
+
+
 
 
 
