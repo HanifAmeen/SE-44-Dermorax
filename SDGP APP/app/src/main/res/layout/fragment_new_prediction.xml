@@ -112,6 +112,20 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
+            <TextView
+                android:id="@+id/id_predictionValue"
+                android:layout_width="233dp"
+                android:layout_height="58dp"
+                android:layout_marginTop="44dp"
+                android:text="TextView"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.505"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/id_predict_btn" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

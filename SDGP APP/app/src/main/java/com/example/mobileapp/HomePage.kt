@@ -93,6 +93,7 @@ open class HomePage : AppCompatActivity() {
             else {
                 Toast.makeText(applicationContext, "Camera Permission is needed to proceed", Toast.LENGTH_SHORT).show()
             }
+
         }
     }
 

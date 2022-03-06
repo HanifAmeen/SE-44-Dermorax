@@ -1,39 +1,38 @@
 package com.example.mobileapp
 
-import android.Manifest.permission.CAMERA
-import android.app.Application
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.graphics.Bitmap
-import android.graphics.Camera
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.FrameLayout
-import android.widget.ImageView
-import android.widget.ToggleButton
+import android.widget.*
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContract
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import androidx.core.view.setPadding
 import androidx.fragment.app.Fragment
+import com.example.mobileapp.ml.Irv2Sa
 import com.theartofdev.edmodo.cropper.CropImage
-import java.util.jar.Manifest
+import org.tensorflow.lite.DataType
+import org.tensorflow.lite.support.image.TensorImage
+import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
+import java.io.IOException
+import java.nio.ByteBuffer
+import java.nio.ByteOrder
+
 
 class FragmentNewPrediction : Fragment()  {
 
     private val cropActivityContract = object : ActivityResultContract<Any?, Uri?>(){
         override fun createIntent(context: Context, input: Any?): Intent {
-
+            applicationContext=activity!!.applicationContext
             return CropImage.activity()
                 .setAspectRatio(1,1)
                 .getIntent(activity!!.applicationContext)
+
         }
         override fun parseResult(resultCode: Int, intent: Intent?): Uri? {
             return CropImage.getActivityResult(intent)?.uri
@@ -48,9 +47,13 @@ class FragmentNewPrediction : Fragment()  {
     private lateinit var backBtn: Button
     private lateinit var predictBtn: Button
     private var homeFragment = FragmentHome()
+    private lateinit var image:Bitmap
+    private lateinit var predictionValueView : TextView
+    private var applicationContext=context
 
 
-    override fun onCreateView(
+
+        override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -64,10 +67,22 @@ class FragmentNewPrediction : Fragment()  {
         cameraView= view.findViewById(R.id.id_imageView_frame)
         backBtn= view.findViewById(R.id.id_back_btn)
         predictBtn= view.findViewById(R.id.id_predict_btn)
+        predictionValueView= view.findViewById(R.id.id_predictionValue)
+
+        //loading the metadata file
+        val inputString = requireActivity().application.assets.open("skin_cancer_labels.txt").bufferedReader().use { it.readText() }
+        var skinCancerList = inputString.split("\n")
 
         cropActivityResultLauncher = registerForActivityResult(cropActivityContract){
             it?.let { uri ->
                 imageView.setImageURI(uri)
+
+
+                try {
+                    image = MediaStore.Images.Media.getBitmap(requireActivity().contentResolver, uri)
+                } catch (e: IOException) {
+                    e.printStackTrace()
+                }
 
             }
         }
@@ -105,7 +120,74 @@ class FragmentNewPrediction : Fragment()  {
             transaction.commit()
         }
 
+        Log.d("my","debug")
+
         predictBtn.setOnClickListener {
+
+            image = Bitmap.createScaledBitmap(image,299,299,true)
+
+            Log.d("my",image.height.toString())
+            Log.d("my",image.width.toString())
+
+            //model
+
+            try {
+                val model = applicationContext!!.let { it1 -> Irv2Sa.newInstance(it1) }
+
+                if (model==null) Log.d("my2","model is null")
+                // Creates inputs for reference.
+                val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 299, 299, 3), DataType.FLOAT32)
+
+                Log.d("my",inputFeature0.shape.toString())
+
+                //creating a tensor buffer
+                val tensorBuffer = TensorImage.fromBitmap(image)
+                //converting to a byte buffer
+//                val byteBuffer = tensorBuffer.buffer
+
+
+                val byteBuffer: ByteBuffer = ByteBuffer.allocateDirect(4 * 299 * 299 * 3)
+                byteBuffer.order(ByteOrder.nativeOrder())
+
+                val intValues = IntArray(299 * 299)
+                image.getPixels(intValues, 0, image.width, 0, 0, image.width, image.height)
+                var pixel = 0
+                for (i in 0..298) {
+                    for (j in 0..298) {
+                        val `val` = intValues[pixel++]
+                        byteBuffer.putFloat((`val` shr 16 and 0xFF) * (1f / 255f))
+                        byteBuffer.putFloat((`val` shr 8 and 0xFF) * (1f / 255f))
+                        byteBuffer.putFloat((`val` and 0xFF) * (1f / 255f))
+                    }
+                }
+
+                Log.d("my",tensorBuffer.width.toString())
+                Log.d("my",tensorBuffer.height.toString())
+
+
+                inputFeature0.loadBuffer(byteBuffer)
+
+                // Runs model inference and gets result.
+                val outputs = model?.process(inputFeature0)
+                val outputFeature0 = outputs?.outputFeature0AsTensorBuffer  //predictions float array
+
+                val predictionIndex = outputFeature0?.let { it1 -> getMaxPredictionValueIndex(it1.floatArray) }
+
+
+                Log.d("my2","prediction index $predictionIndex")
+                Log.d("my2",outputFeature0?.floatArray.toString())
+
+//                predictionValueView.text= skinCancerList[predictionIndex]
+
+
+                // Releases model resources if no longer used.
+                model?.close()
+
+
+            }catch (e: IOException){
+                e.printStackTrace()
+            }
+
 
         }
 
@@ -117,14 +199,34 @@ class FragmentNewPrediction : Fragment()  {
 
     }
 
+    //called when an activity opens
+    //if request code is equal to camera ID then data from extras is collected and converted to a Bitmap
+    //Bitmap image will be set to the image view
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode==cameraRequestId){
-            val image:Bitmap=data?.extras?.get("data") as Bitmap
+            image =data?.extras?.get("data") as Bitmap
+
             imageView.setImageBitmap(image)
 
         }
 
+    }
+
+    //returns the index from the array which has the maximum prediction value
+    private fun getMaxPredictionValueIndex(arr: FloatArray) : Int{
+
+        var index=0
+        var max = 0.00f
+
+        for (i in arr.indices){
+            if (arr[i]>max){
+                max = arr[i]
+                index=i
+            }
+        }
+
+        return index
     }
 
 
