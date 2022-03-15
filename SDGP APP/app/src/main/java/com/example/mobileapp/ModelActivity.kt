@@ -127,25 +127,6 @@ class ModelActivity : AppCompatActivity() {
         return index
     }
 
-    @Throws(IOException::class)
-    private fun loadModelFile(): MappedByteBuffer? {
-        val fileDescriptor = this.assets.openFd("IRV2_SA.tflite")
-        val fileInputStream = FileInputStream(fileDescriptor.fileDescriptor)
-        val fileChannel: FileChannel = fileInputStream.channel
-        val startOffSets = fileDescriptor.startOffset
-        val declaredLength = fileDescriptor.declaredLength
-        return fileChannel.map(FileChannel.MapMode.READ_ONLY, startOffSets, declaredLength)
-    }
-
-    private fun inference(s: String): Float {
-        val inputValue = arrayOf<Float>()
-        inputValue[0] = java.lang.Float.valueOf(s)
-
-        val outputValue = Array(1) { FloatArray(1) }
-        tflite.run(inputValue, outputValue)
-
-        return outputValue[0][0]
-    }
 
 
 }
