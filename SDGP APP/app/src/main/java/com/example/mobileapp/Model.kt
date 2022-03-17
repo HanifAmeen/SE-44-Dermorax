@@ -1,61 +1,51 @@
 package com.example.mobileapp
 
+import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mobileapp.ml.Irv2Sa
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.Interpreter
-import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
-import java.io.FileInputStream
 import java.io.IOException
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
-import java.nio.MappedByteBuffer
-import java.nio.channels.FileChannel
 
+class Model(private val context: Context) : AppCompatActivity() {
 
-class ModelActivity : AppCompatActivity() {
-
-    private lateinit var resizeImage :Bitmap
-    private lateinit var image:Bitmap
-    private lateinit var predictionValueView : TextView
-    private lateinit var temp: TextView
-    private lateinit var tflite: Interpreter
-
-    //loading the metadata file
-//    private val inputString = application.assets.open("skin_cancer_labels.txt").bufferedReader().use { it.readText() }
-//    var skinCancerList = inputString.split("\n")
+    private lateinit var resizeImage : Bitmap
+    //private lateinit var image: Bitmap
+    private lateinit var prediction: String
+    //private lateinit var tflite: Interpreter
 
     var skinCancerList = listOf ("akiec", "bcc", "bkl", "df", "mel", "nv", "vasc")
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_model)
+
+    fun main(byteArray: ByteArray) : String{
+
 
         //initializing the elements
 //        predictionValueView= findViewById(R.id.id_predictionValue)
-        temp= findViewById(R.id.tempview)
+      //  predictionView= findViewById(R.id.id_predictionView)
 
         //retrieving the byte array from the intent and converting it to a bitmap
-        val byteArray = intent.getByteArrayExtra("Image")
-        val image = BitmapFactory.decodeByteArray(byteArray, 0, byteArray!!.size)
+
+        val image = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.size)
 
         resizeImage = Bitmap.createScaledBitmap(image, 299, 299, true)
 
 
 
 
-   //     Log.d("my", resizeImage.height.toString())
-    //    Log.d("my", resizeImage.width.toString())
+        //     Log.d("my", resizeImage.height.toString())
+        //    Log.d("my", resizeImage.width.toString())
 
         //model
 
         try {
-            val model = Irv2Sa.newInstance(this)
+            val model = Irv2Sa.newInstance(context)
 
 //            if (model == null) Log.d("my2", "model is null")
             // Creates inputs for reference.
@@ -83,8 +73,8 @@ class ModelActivity : AppCompatActivity() {
                 }
             }
 
-        //    Log.d("my", tensorBuffer.width.toString())
-       //     Log.d("my", tensorBuffer.height.toString())
+            //    Log.d("my", tensorBuffer.width.toString())
+            //     Log.d("my", tensorBuffer.height.toString())
 
 
             inputFeature0.loadBuffer(byteBuffer)
@@ -96,19 +86,22 @@ class ModelActivity : AppCompatActivity() {
             val predictionIndex = getMaxPredictionValueIndex(outputFeature0.floatArray)
 
 
-      //      Log.d("my2", "prediction index $predictionIndex")
-      //      Log.d("my2", outputFeature0.floatArray.toString())
+            //      Log.d("my2", "prediction index $predictionIndex")
+            //      Log.d("my2", outputFeature0.floatArray.toString())
 
-            temp.text="done"
-            temp.text= skinCancerList[predictionIndex]
+//            predictionView.text="done"
+            prediction= skinCancerList[predictionIndex]
 
 
             // Releases model resources if no longer used.
             model.close()
 
+
         }catch (e : IOException){
             e.printStackTrace()
         }
+
+        return prediction
     }
 
     //returns the index from the array which has the maximum prediction value
@@ -126,7 +119,6 @@ class ModelActivity : AppCompatActivity() {
 
         return index
     }
-
 
 
 }

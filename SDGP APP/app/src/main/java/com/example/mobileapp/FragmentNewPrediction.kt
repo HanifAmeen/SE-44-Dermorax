@@ -1,10 +1,12 @@
 package com.example.mobileapp
 
+import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
 import android.provider.MediaStore
 import android.util.Log
 import android.view.LayoutInflater
@@ -61,7 +63,7 @@ class FragmentNewPrediction : Fragment()  {
         cameraView= view.findViewById(R.id.id_imageView_frame)
         backBtn= view.findViewById(R.id.id_back_btn)
         predictBtn= view.findViewById(R.id.id_predict_btn)
-        predictionValueView= view.findViewById(R.id.id_predictionValue)
+        predictionValueView= view.findViewById(R.id.id_predictionView)
 
 
         cropActivityResultLauncher = registerForActivityResult(cropActivityContract){
@@ -115,14 +117,30 @@ class FragmentNewPrediction : Fragment()  {
 
         predictBtn.setOnClickListener {
 
-            //Convert the bitmap to byte array
-            val stream = ByteArrayOutputStream()
-            image.compress(Bitmap.CompressFormat.PNG, 100, stream)
-            val byteArray: ByteArray = stream.toByteArray()
+            predictionValueView.text="Processing......"
 
-            val modelIntent = Intent(context,ModelActivity::class.java)
-            modelIntent.putExtra("Image",byteArray) //adding the byte array to the intent
-            startActivity(modelIntent)
+            val dialogPopup = Dialog(requireContext())
+            dialogPopup.setContentView(R.layout.activity_dialog)
+
+            Handler().postDelayed({
+                //Convert the bitmap to byte array
+                val stream = ByteArrayOutputStream()
+                image.compress(Bitmap.CompressFormat.PNG, 100, stream)
+                val byteArray: ByteArray = stream.toByteArray()
+
+                val model = Model(dialogPopup.context)
+                val prediction = model.main(byteArray)
+
+                predictionValueView.text=prediction
+
+            },1)
+
+            dialogPopup.show()
+
+//
+//            val modelIntent = Intent(context,PredictionPopup::class.java)
+//            modelIntent.putExtra("Image",byteArray) //adding the byte array to the intent
+//            startActivity(modelIntent)
 
 
         }

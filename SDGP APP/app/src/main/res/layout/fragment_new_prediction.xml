@@ -113,7 +113,7 @@
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
             <TextView
-                android:id="@+id/id_predictionValue"
+                android:id="@+id/id_predictionView"
                 android:layout_width="233dp"
                 android:layout_height="58dp"
                 android:layout_marginTop="44dp"
