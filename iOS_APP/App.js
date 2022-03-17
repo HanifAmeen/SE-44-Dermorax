@@ -5,35 +5,51 @@ export default function App() {
   return (
     <View style={styles.container}>
       
-      <Text style={styles.mainTitle}>DERMORAX</Text>
-
+      <View style={styles.mainTitle}>
+        <Text style={styles.mainTitle}>DERMORAX</Text>
+      </View>
+      
+      <View style={styles.logo}>
       <Image 
         source={require('./assets/logo.png')}
         style={styles.logo}
       />
+      </View>
+      
 
-      <Text style={styles.welcome}>Welcome</Text>
+      <View style={styles.welcome}>
+        <Text style={styles.welcome}>Welcome</Text>
+      </View>
+      
+      
 
-      <Image 
+      {/* <Image 
         source={require('./assets/bar.png')}
         style={styles.bar}
-      />
+      />  */}
 
-      <View style={styles.buttonsContainer}>
+      <View style={styles.loginContainer}>
+        <Image
+          source={require('./assets/bg_1.png')}
+          style={styles.loginContainer}
+          />
+
+        
+      </View>
+      
       <Button
-        title='SIGN IN' color='#9599B3'  style={styles.button}
+        title={'LOG IN'}
+        style={styles.login}
         />
+      
 
-      <Button
-                title={'React Native Elements'}
-                containerStyle={{
-                  width: 100,
-                  
-                }}/>
+
+      
+      
 
       
 
-      </View>
+      
 
 
       
@@ -49,49 +65,44 @@ const styles = StyleSheet.create({
     width:'100%',
     backgroundColor: '#241332',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   mainTitle: {
     color:'#BCBCBC',
     fontSize: 40,
-    marginTop:'20%',
-    fontWeight:'bold',
-  },
-  welcome: {
-    flex: 1,
-    color:'#BCBCBC',
-    fontSize: 30,
-    marginTop:'10%',
-    fontWeight:'normal',
-    alignItems: 'center',
-    justifyContent: 'center',
+    marginTop:'18%',
+    fontWeight:'bold'
   },
   logo: {
-    width:300, 
-    height:230, 
-    marginTop:'6%',
+    flex:1,
+    width:280, 
+    height:230,
+    position:'absolute'
+    
   },
+  welcome: {
+    flex:1,
+    color:'#BCBCBC',
+    fontSize: 30,
+    marginTop:'20%'
+  },
+  login: {
+    
+  },
+  loginContainer:{
+    
+    marginTop:'36%',
+    width: '100%',
+    height: '47%',
+    
+  },
+
+  
   bar: {
     width:200, 
     height:15, 
-    marginTop:'0%',
-  },
-  button: {
-    margin:'0%',
-    height:'100%',
-    marginBottom:50
-
-  },
-  buttonsView: {
-    marginTop:'0%',
-    
-  },
-  buttonsContainer: {
-    
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '100%',
-    
-    marginBottom: '20%',
-  },
+    marginTop:'0%'
+  }
+  
+  
 });
