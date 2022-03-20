@@ -48,6 +48,11 @@
     <string name="prediction_results">Prediction Results</string>
     <string name="d_o_n_e">D O N E</string>
     <string name="d_e_r_m_o_r_a_x">D E R M O R A X</string>
+    <string name="p_r_e_d_i_c_t">P R E D I C T</string>
+    <string name="view_more_information">View More Information</string>
+    <string name="severity">SEVERITY</string>
+    <string name="disease_type">DISEASE TYPE</string>
+    <string name="_00">00%</string>
 
 
 </resources>
