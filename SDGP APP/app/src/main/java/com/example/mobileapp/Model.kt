@@ -3,6 +3,7 @@ package com.example.mobileapp
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mobileapp.ml.Irv2Sa
@@ -12,18 +13,19 @@ import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import java.io.IOException
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
+import kotlin.math.roundToInt
 
 class Model(private val context: Context) : AppCompatActivity() {
 
     private lateinit var resizeImage : Bitmap
-    //private lateinit var image: Bitmap
     private lateinit var prediction: String
-    //private lateinit var tflite: Interpreter
+    private var percentage =0
+    private var returnArray = mutableListOf<String>()
 
     var skinCancerList = listOf ("akiec", "bcc", "bkl", "df", "mel", "nv", "vasc")
 
 
-    fun main(byteArray: ByteArray) : String{
+    fun main(byteArray: ByteArray) : List<String>{
 
 
         //initializing the elements
@@ -85,13 +87,15 @@ class Model(private val context: Context) : AppCompatActivity() {
 
             val predictionIndex = getMaxPredictionValueIndex(outputFeature0.floatArray)
 
+            var v= (outputFeature0.intArray.asList())
+            Log.d("my","$v")
 
             //      Log.d("my2", "prediction index $predictionIndex")
             //      Log.d("my2", outputFeature0.floatArray.toString())
 
 //            predictionView.text="done"
             prediction= skinCancerList[predictionIndex]
-
+            percentage= getMaxPredictionValuePercentage(outputFeature0.floatArray)
 
             // Releases model resources if no longer used.
             model.close()
@@ -101,7 +105,9 @@ class Model(private val context: Context) : AppCompatActivity() {
             e.printStackTrace()
         }
 
-        return prediction
+        returnArray.add(prediction)
+        returnArray.add(percentage.toString())
+        return returnArray
     }
 
     //returns the index from the array which has the maximum prediction value
@@ -118,6 +124,20 @@ class Model(private val context: Context) : AppCompatActivity() {
         }
 
         return index
+    }
+
+    //returns the percentage from the array which has the maximum prediction value
+    private fun getMaxPredictionValuePercentage(arr: FloatArray) : Int{
+
+        var max = 0.00f
+
+        for (i in arr.indices){
+            if (arr[i]>max){
+                max = arr[i]
+            }
+        }
+
+        return (max*100).toInt()
     }
 
 
