@@ -27,7 +27,7 @@
         android:layout_marginStart="84dp"
         android:layout_marginTop="112dp"
         android:background="@color/dark_pruple"
-        android:text="@string/sign_in"
+        android:text="@string/log_in"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/appTitle" />
@@ -44,6 +44,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/appTitle"
         tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="238dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginBottom="19dp"
+        android:backgroundTint="@color/white"
+        android:drawableStart="@drawable/user"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:hint="@string/username"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:textColorHint="#BCBCBC"
+        app:layout_constraintBottom_toTopOf="@+id/editTextEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/signInButton" />
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -66,25 +86,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signInButton" />
 
-    <EditText
-        android:id="@+id/editTextUsername"
-        android:layout_width="238dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="76dp"
-        android:layout_marginBottom="19dp"
-        android:backgroundTint="@color/white"
-        android:drawableStart="@drawable/user"
-        android:drawablePadding="12dp"
-        android:ems="10"
-        android:hint="@string/username"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:textColor="@color/white"
-        android:textColorHint="#BCBCBC"
-        app:layout_constraintBottom_toTopOf="@+id/editTextEmail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/signInButton" />
 
     <EditText
         android:id="@+id/editTextEmail"

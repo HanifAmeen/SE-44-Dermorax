@@ -1,76 +1,157 @@
 package com.example.mobileapp
 
+import android.app.ProgressDialog
 import android.content.Intent
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
+import android.util.Patterns
 import android.widget.Toast
-import com.google.firebase.database.*
+import androidx.appcompat.app.ActionBar
+import com.example.mobileapp.databinding.SignupPageBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
 class SignupPage : AppCompatActivity() {
-    private lateinit var databaseReference: DatabaseReference
+    //ViewBinding
+    private lateinit var binding:SignupPageBinding
 
-    override fun onCreate(savedInstanceState: Bundle?){
+    //ActionBar
+//    private lateinit var actionBar:ActionBar
+
+    //progressDialog
+    private lateinit var progressDialog: ProgressDialog
+
+
+    //Firebase authentication
+    private lateinit var firebaseAuth: FirebaseAuth
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.signup_page)
+        binding = SignupPageBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        // Reference for the user node
-        databaseReference = FirebaseDatabase.getInstance().getReference("User")
+        //Configure ActionBar, Enable back button
+//        actionBar = supportActionBar!!
+//        actionBar.title = "Sign Up"
+//        actionBar.setDisplayHomeAsUpEnabled(true)
+//        actionBar.setDisplayShowHomeEnabled(true)
 
-        val signInBtn = findViewById<Button>(R.id.signInButton)
-        val username = findViewById<EditText>(R.id.editTextUsername)
-        val password = findViewById<EditText>(R.id.editTextPassword)
-        val email = findViewById<EditText>(R.id.editTextEmail)
-        val wrongCredentials = findViewById<TextView>(R.id.id_wrong_credentials2)
-        val continueBtn = findViewById<Button>(R.id.continueButton)
+        //Configure progress Dialog
+        progressDialog = ProgressDialog(this)
+        progressDialog.setTitle("please Wait")
+        progressDialog.setMessage("Creating account...")
+        progressDialog.setCanceledOnTouchOutside(false)
 
-        //Sign in Button
-        signInBtn.setOnClickListener {
-            val signInIntent = Intent(this,LoginPage::class.java)
-            startActivity(signInIntent)
+        //Initializing firebase auth
+        firebaseAuth = FirebaseAuth.getInstance()
+
+        //Sign In button
+        binding.signInButton.setOnClickListener {
+            startActivity(Intent(this, LoginPage::class.java))
         }
-        //Continue Button
-        continueBtn.setOnClickListener {
 
-            //Checking for existing usernames
-            val details = checkExistingUserName(username.text.toString())
-            Log.d("My", details.toString())
-            if(!details){
-                val user = User (username.text.toString(),password.text.toString(),email.text.toString())
+        //Handle click, begin signup
+        binding.continueButton.setOnClickListener {
 
-                databaseReference.child(username.text.toString()).setValue(user).addOnSuccessListener {
-                    Toast.makeText(this,"Successfully Saved", Toast.LENGTH_SHORT).show()
-                }.addOnFailureListener{
-                    Toast.makeText(this,"Failed", Toast.LENGTH_SHORT).show()
-                }
-
-                val getStartedIntent = Intent(this,UserWelcome::class.java)
-                startActivity(getStartedIntent)
-
-                username.setText("")
-                password.setText("")
-                email.setText("")
-
-            }else{
-                wrongCredentials.text="An account already exist for this username"
-                wrongCredentials.setTextColor(Color.RED)
-            }
-
+            validateData()
         }
     }
-    private fun checkExistingUserName(username: String):Boolean{
-        var result = false
-        databaseReference = FirebaseDatabase.getInstance().getReference("User")
-        databaseReference.child(username).get().addOnSuccessListener {
 
-            if(it.exists()){
-                result=true
-            }
+    private var username = ""
+    private var email = ""
+    private var password = ""
+
+    private fun validateData() {
+        // ** Input Data **
+        username = binding.editTextUsername.text.toString().trim()
+        email = binding.editTextEmail.text.toString().trim()
+        password = binding.editTextPassword.text.toString().trim()
+
+        // ** Validate Data **
+        if (username.isEmpty()){
+            //Empty name
+            Toast.makeText(this, "Enter username...", Toast.LENGTH_SHORT).show()
         }
-        return result
+        else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            //Invalid email format
+            Toast.makeText(this, "Invalid Email format...", Toast.LENGTH_SHORT).show()
+        }
+        else if (password.isEmpty()){
+            Toast.makeText(this, "Enter password...", Toast.LENGTH_SHORT).show()
+        }
+        else{
+            createUserAccount()
+        }
+
+    }
+
+    private fun createUserAccount() {
+        // ** Create account - Firebase Auth **
+        progressDialog.setMessage("Creating Account...")
+        progressDialog.show()
+
+        //Create user in firebase auth
+        firebaseAuth.createUserWithEmailAndPassword(email, password)
+            .addOnSuccessListener {
+                //Account created and add user info in db
+                updateUserInfo()
+        }
+            .addOnFailureListener {e->
+                //Failed creating account
+                progressDialog.dismiss()
+                Toast.makeText(this, "Signup failed due to ${e.message}", Toast.LENGTH_LONG).show()
+            }
+    }
+
+    private fun updateUserInfo() {
+       // ** Save user info - firebase Realtime database **
+
+        progressDialog.setMessage("Saving user info...")
+
+        //Timestamp
+        val timestamp = System.currentTimeMillis()
+        //Get current user uid since user is registered so we can get it now
+        val uid = firebaseAuth.uid
+
+        ///Setup data to add in db
+        val hashMap: HashMap<String, Any?> = HashMap()
+        hashMap["email"] = email
+        hashMap["uid"] = uid
+        hashMap["username"] = username
+        hashMap["password"] = password
+        hashMap["profileImage"] = ""
+        hashMap["userType"] = "user" //user/admin
+        hashMap["timestamp"] = timestamp
+
+        //Set data to db
+        val ref = FirebaseDatabase.getInstance().getReference("Users")
+        ref.child(username)
+            .setValue(hashMap)
+            .addOnSuccessListener {
+                //User info saved  Open User welcome page
+                progressDialog.dismiss()
+                Toast.makeText(this, "Account created...", Toast.LENGTH_LONG).show()
+                val profileActivity = Intent(applicationContext, ProfileActivity::class.java)
+                startActivity(profileActivity)
+
+            }
+            .addOnFailureListener { e->
+                //Failed adding data
+                progressDialog.dismiss()
+                Toast.makeText(this, "Failed saving user info due to ${e.message}", Toast.LENGTH_LONG).show()
+            }
+
+
+
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed() // Go back to previous activity, when back button of actionbar is clicked
+        return super.onSupportNavigateUp()
     }
 }
+
+
+
+
