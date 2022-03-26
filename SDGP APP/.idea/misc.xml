@@ -59,7 +59,15 @@
         <entry key="..\:/Users/Janidu Chathumina/Desktop/sdgp Code work/SDGP APP/app/src/main/res/layout/login_page.xml" value="0.4" />
         <entry key="..\:/Users/Janidu Chathumina/Desktop/sdgp Code work/SDGP APP/app/src/main/res/layout/signup_page.xml" value="0.4" />
         <entry key="..\:/Users/Janidu Chathumina/Desktop/sdgp Code work/SDGP APP/app/src/main/res/layout/user_welcome.xml" value="0.264" />
-        <entry key="..\:/Users/User/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/signup_page.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/REPOSITORY/SDGP APP/app/src/main/res/drawable/continue_button.xml" value="0.2415" />
+        <entry key="..\:/Users/User/Desktop/REPOSITORY/SDGP APP/app/src/main/res/drawable/logout_button_dark_purple.xml" value="0.2415" />
+        <entry key="..\:/Users/User/Desktop/REPOSITORY/SDGP APP/app/src/main/res/drawable/transparent_button.xml" value="0.2415" />
+        <entry key="..\:/Users/User/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/activity_dialog.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/activity_profile.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/login_page.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/signup_page.xml" value="0.2" />
+        <entry key="..\:/Users/User/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/user_welcome.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/welcome_page.xml" value="0.25" />
       </map>
     </option>
   </component>

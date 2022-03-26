@@ -4,6 +4,7 @@
     package="com.example.mobileapp">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
@@ -16,12 +17,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MobileAPP">
+
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
         <activity
             android:name=".Dialog"
             android:exported="false" />
-        <activity
-            android:name=".PredictionPopup"
-            android:exported="false" />
+
         <activity
             android:name=".HomePage"
             android:exported="false" />

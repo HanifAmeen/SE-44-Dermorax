@@ -5,7 +5,7 @@
 
     <string name="welcome">Welcome</string>
 
-
+    <string name="no_account">Not have an account?<b>Sign up</b>></string>
     <string name="sign_un">SIGN UP</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
@@ -20,7 +20,6 @@
     <string name="sign_in">SIGN IN</string>
     <string name="username">Username</string>
     <string name="poweredby">Powered by Expendables</string>
-    <string name="email">Email</string>
     <string name="continueNext">Continue</string>
     <string name="get_started">GET STARTED</string>
     <string name="welcome_name">Welcome, Lucas</string>
@@ -53,6 +52,10 @@
     <string name="severity">SEVERITY</string>
     <string name="disease_type">DISEASE TYPE</string>
     <string name="_00">00%</string>
+    <string name="email">Email</string>
+    <string name="you_re_logged_in_as">You\'re Logged in as</string>
+    <string name="logout">Logout</string>
+    <string name="log_in">LOG IN</string>
 
 
 </resources>
