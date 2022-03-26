@@ -13,6 +13,9 @@
         <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/drawable/ic_home.xml" value="0.197" />
         <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/drawable/ic_menu.xml" value="0.197" />
         <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/drawable/image_background.xml" value="0.1635" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/drawable/logout_button_dark_purple.xml" value="0.2085" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/drawable/main_btn_dark.xml" value="0.2085" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/drawable/main_btn_light.xml" value="0.2085" />
         <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/drawable/toggle_switch_capture_upload.xml" value="0.193" />
         <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/drawable/view_more_info_btn.xml" value="0.2115" />
         <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout-land/fragment_new_prediction.xml" value="0.25104166666666666" />
@@ -20,11 +23,13 @@
         <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout-v28/home_page.xml" value="0.23020833333333332" />
         <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/activity_dialog.xml" value="0.2" />
         <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/activity_model.xml" value="0.21822916666666667" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/activity_profile.xml" value="0.25" />
         <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/fragment_chatbot.xml" value="0.375" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/fragment_new_prediction.xml" value="0.264" />
         <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/fragment_previous_predictions.xml" value="0.1" />
         <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/home_page.xml" value="0.264" />
-        <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/login_page.xml" value="0.10300429184549356" />
+        <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/login_page.xml" value="0.176" />
         <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/signup_page.xml" value="0.25" />
         <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/user_welcome.xml" value="0.1" />
         <entry key="..\:/Users/Janidu Chathumina/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/welcome_page.xml" value="0.264" />
