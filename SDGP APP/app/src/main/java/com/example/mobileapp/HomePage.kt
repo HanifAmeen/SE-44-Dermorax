@@ -45,7 +45,7 @@ open class HomePage : AppCompatActivity() {
             when(it.itemId){
                 R.id.nav_news_feed -> replaceFragment(fragmentNews)
                 R.id.nav_mole_mapper -> replaceFragment(fragmentMoleMap)
-                R.id.nav_home -> replaceFragment(fragmentChatBot)
+                R.id.nav_home -> replaceFragment(fragmentHome)
                 R.id.nav_previous_predictions -> replaceFragment(fragmentPreviousPrediction)
 
                 else -> {replaceFragment(fragmentHome)}
