@@ -8,15 +8,224 @@
     android:id="@+id/home_fragment_layout">
 
 
-    <TextView
-        android:id="@+id/id_title"
-        android:layout_width="169dp"
-        android:layout_height="72dp"
-        android:text="Home"
-        android:textColor="@color/white"
-        android:textSize="30sp"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/id_user_image"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/user_dp"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/id_filter"
+                android:layout_width="match_parent"
+                android:layout_height="169dp"
+                app:layout_constraintBottom_toBottomOf="@+id/id_user_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/black_filter"
+                tools:ignore="ContentDescription" />
+
+            <Button
+                android:id="@+id/id_btn_previous_predictions"
+                android:layout_width="240dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="27dp"
+                android:background="@drawable/main_btn_light"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="@string/previous_predictions"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/id_btn_news_feed"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <ImageView
+                android:id="@+id/id_notifications"
+                android:layout_width="80dp"
+                android:layout_height="51dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.622"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/label_cancerous"
+                app:srcCompat="@drawable/notifications_icon"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/id_count_non_cancerous"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="center"
+                android:text="001"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/id_user_image" />
+
+            <Button
+                android:id="@+id/id_btn_news_feed"
+                android:layout_width="240dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="27dp"
+                android:background="@drawable/main_btn_dark"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="@string/news_feed"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/id_btn_new_prediction"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/id_btn_exit"
+                android:layout_width="240dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="27dp"
+                android:background="@drawable/main_btn_dark"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="@string/exit"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/id_btn_previous_predictions"
+                tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+            <TextView
+                android:id="@+id/label_predictions"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="24dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:text="@string/predictions_label"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/id_count_predictions" />
+
+            <TextView
+                android:id="@+id/id_name"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="center"
+                android:text="@string/lucas_jayden"
+                android:textColor="@color/pale_white"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="@+id/id_user_image" />
+
+            <TextView
+                android:id="@+id/id_count_cancerous"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="center"
+                android:text="005"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toStartOf="@+id/id_count_non_cancerous"
+                app:layout_constraintStart_toEndOf="@+id/id_count_predictions"
+                app:layout_constraintTop_toBottomOf="@+id/id_user_image" />
+
+            <TextView
+                android:id="@+id/label_cancerous"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:text="@string/cancerous"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toStartOf="@+id/label_non_cancerous"
+                app:layout_constraintStart_toEndOf="@+id/label_predictions"
+                app:layout_constraintTop_toBottomOf="@+id/id_count_cancerous" />
+
+            <TextView
+                android:id="@+id/label_non_cancerous"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:text="@string/non_cancerous"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/id_count_non_cancerous" />
+
+            <TextView
+                android:id="@+id/id_count_predictions"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="center"
+                android:text="003"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/id_user_image" />
+
+            <Button
+                android:id="@+id/id_btn_new_prediction"
+                android:layout_width="240dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="53dp"
+                android:background="@drawable/main_btn_light"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="@string/new_prediction"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/id_notifications"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <ImageView
+                android:id="@+id/id_messages"
+                android:layout_width="80dp"
+                android:layout_height="51dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.353"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/label_predictions"
+                app:srcCompat="@drawable/messages_icon"
+                tools:ignore="ContentDescription" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="156dp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/id_btn_exit" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

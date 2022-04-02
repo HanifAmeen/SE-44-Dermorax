@@ -4,6 +4,7 @@
     package="com.example.mobileapp">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
@@ -17,12 +18,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MobileAPP">
         <activity
-            android:name=".ModelActivity"
+            android:name=".Menu_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Dialog"
             android:exported="false" />
         <activity
             android:name=".HomePage"
             android:exported="false" />
-
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" /> <!-- optional (needed if default theme has no action bar) -->

@@ -5,7 +5,7 @@
 
     <string name="welcome">Welcome</string>
 
-
+    <string name="no_account">Not have an account?<b>Sign up</b>></string>
     <string name="sign_un">SIGN UP</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
@@ -20,7 +20,6 @@
     <string name="sign_in">SIGN IN</string>
     <string name="username">Username</string>
     <string name="poweredby">Powered by Expendables</string>
-    <string name="email">Email</string>
     <string name="continueNext">Continue</string>
     <string name="get_started">GET STARTED</string>
     <string name="welcome_name">Welcome, Lucas</string>
@@ -35,8 +34,6 @@
     <string name="chatbot">ChatBot</string>
     <string name="news">News</string>
     <string name="home">Home</string>
-
-    <string name="new_prediction">NEW PREDICTION</string>
     <string name="capture">Capture</string>
     <string name="dermorax_spaced">D E R M O R A X</string>
     <string name="todo">TODO</string>
@@ -44,6 +41,27 @@
     <string name="mole_map">Mole Map</string>
     <string name="upload">upload</string>
     <string name="predict">PREDICT</string>
+    <string name="x">X</string>
+    <string name="prediction_results">Prediction Results</string>
+    <string name="d_o_n_e">D O N E</string>
+    <string name="d_e_r_m_o_r_a_x">D E R M O R A X</string>
+    <string name="p_r_e_d_i_c_t">P R E D I C T</string>
+    <string name="view_more_information">View More Information</string>
+    <string name="severity">SEVERITY</string>
+    <string name="disease_type">DISEASE TYPE</string>
+    <string name="_00">00%</string>
+    <string name="email">Email</string>
+    <string name="you_re_logged_in_as">You\'re Logged in as</string>
+    <string name="logout">Logout</string>
+    <string name="log_in">LOG IN</string>
+    <string name="new_prediction">NEW PREDICTION</string>
+    <string name="non_cancerous">NON-CANCEROUS</string>
+    <string name="cancerous">CANCEROUS</string>
+    <string name="lucas_jayden">Lucas Jayden</string>
+    <string name="previous_predictions">PREVIOUS PREDICTIONS</string>
+    <string name="news_feed">NEWS FEED</string>
+    <string name="exit">EXIT</string>
+    <string name="predictions_label">PREDICTIONS</string>
 
 
 </resources>
