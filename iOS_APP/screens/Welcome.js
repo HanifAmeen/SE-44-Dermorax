@@ -1,105 +1,120 @@
-import { StyleSheet, Text, View } from 'react-native'
+
+
 import React from 'react'
+import { StatusBar } from 'react-native';
+import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity} from 'react-native';
 
-const Login = () => {
+import Logo from '../assets/logo.png'
+import signinup_bg from '../assets/signinup_bg.png'
+
+
+const Welcome = ({navigation}) => {
+
   return (
-    <View>
+    
+    <View style={styles.container}>
+
+      {/* <StatusBar
+        animated={true}
+        backgroundColor="#61dafb"
+         /> */}
+     
+      <View style={styles.logoContainer}>
+        <Text style={styles.mainTitle}>DERMORAX</Text>
+        <Image source={Logo}style={styles.logo} />
+        <Text style={styles.welcome}>Welcome</Text>
+      </View>
+      
+      <View style={styles.buttonContainer}>
+        <ImageBackground source={signinup_bg}style={styles.signinup} >
+
+          <TouchableOpacity style={styles.login_btn} onPress={() => navigation.navigate("LogIN")}>
+            <Text style={styles.logintext}>LOGIN</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.signup_btn} onPress={() => navigation.navigate("SignUP")}>
+            <Text style={styles.signuptext}>SIGN UP</Text>
+          </TouchableOpacity>
+        
+        </ImageBackground>
+      </View>
 
       
-      <Text style={styles.mainTitle}>DERMORAX</Text>
-
-      <Image 
-        source={require('./assets/logo.png')}
-        style={styles.logo}
-      />
-
-      <Text style={styles.welcome}>Welcome</Text>
-
-      {/* <Image 
-        source={require('./assets/bar.png')}
-        style={styles.bar}
-      />
-
-      <View style={styles.buttonsContainer}>
-      <Button
-        title='SIGN IN' color='#9599B3'  style={styles.button}
-        /> */}
-
-      
-
-        <Image
-          source={require('./assets/bg_1.png')}
-          style={styles.login}
-          />
-
-
-        <Button
-          title={'LOG IN'}
-          containerStyle={{width: 500, position:'absolute'}}
-          />
-
     </View>
+    
   )
 }
 
-export default Login
+
+
+export default Welcome
 
 const styles = StyleSheet.create({
-
-    container: {
-        flex:1,
-        height:'100%',
-        width:'100%',
-        backgroundColor: '#241332',
-        alignItems: 'center',
-        justifyContent: 'center',
-      },
-      mainTitle: {
-        color:'#BCBCBC',
-        fontSize: 40,
-        marginTop:'20%',
-        fontWeight:'bold',
-      },
-      welcome: {
-        flex: 1,
-        color:'#BCBCBC',
-        fontSize: 30,
-        marginTop:'10%',
-        fontWeight:'normal',
-        alignItems: 'center',
-        justifyContent: 'center',
-      },
-      logo: {
-        width:300, 
-        height:230, 
-        marginTop:'6%',
-        position: 'absolute'
-      },
-      bar: {
-        width:200, 
-        height:15, 
-        marginTop:'0%',
-      },
-      login: {
-        width: '99%',
-        height: 130
-      },
-      button: {
-        margin:'0%',
-        height:'100%',
-        marginBottom:50
+  container: {
+    flex:1,
+    height:'100%',
+    width:'100%',
+    backgroundColor: '#241332',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  mainTitle: {
+    color:'#BCBCBC',
+    fontSize: 43,
+    marginTop:'0%',
+    fontWeight:'700',
     
-      },
-      buttonsView: {
-        marginTop:'0%',
-        
-      },
-      buttonsContainer: {
-        
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '100%',
-        
-        marginBottom: '20%',
-      },
-})
+  },
+  logo: {
+    marginTop: '10%',
+    width:280, 
+    height:230,
+  },
+  logoContainer: {
+    alignItems: 'center',
+
+  },
+  welcome: {
+    color:'#b1b1b1',
+    fontSize: 30,
+    marginTop:'5%',
+    marginBottom:'5%',
+   
+  },
+  buttonContainer: {
+    
+    width: '100%',
+    height: '15%',
+    marginTop: '0%',
+
+  },
+  signinup: {
+    marginTop: '11%',
+    width: '100%',
+    height: '120%',
+  },
+  login_btn: {
+    alignItems: 'center',
+    width: '100%',
+    height: 60,
+    padding: 16
+  },
+  logintext: {
+    fontSize: 17,
+    fontWeight:'700',
+    color:'#3d3d3d',
+  },
+  signup_btn: {
+    alignItems: 'center',
+    width: '100%',
+    height: 60,
+    padding: 16
+  },
+  signuptext: {
+    fontSize: 17,
+    fontWeight:'700',
+    color:'#8f8f8f',
+  },
+  
+  
+});
