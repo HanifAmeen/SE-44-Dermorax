@@ -9,7 +9,6 @@ import android.widget.Button
 import android.widget.ImageView
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContract
-import androidx.core.content.withStyledAttributes
 import com.theartofdev.edmodo.cropper.CropImage
 
 class UserWelcome : AppCompatActivity() {

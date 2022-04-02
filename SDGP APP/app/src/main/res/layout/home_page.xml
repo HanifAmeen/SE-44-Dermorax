@@ -21,7 +21,7 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinatorLayout"
         android:layout_width="match_parent"
-        android:layout_height="58dp"
+        android:layout_height="53dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -29,8 +29,8 @@
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_nav_view"
             android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:background="@color/nav_bar_pruple"
+            android:layout_height="53dp"
+            android:background="@color/text_purple"
             app:itemIconTint="@color/dark_pruple"
             app:itemRippleColor="@color/dark_pruple"
             app:itemTextColor="@color/dark_pruple"
@@ -42,13 +42,14 @@
         android:id="@+id/floating_add_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="24dp"
         android:backgroundTint="@color/float_btn_color"
-        app:borderWidth="0dp"
         android:contentDescription="@string/todo"
         android:src="@drawable/ic_add"
+        app:borderWidth="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/coordinatorLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
@@ -60,7 +61,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@color/top_bar_purple"
-        android:outlineAmbientShadowColor="@color/black">
+        android:outlineAmbientShadowColor="@color/black"
+        tools:targetApi="p">
 
         <ImageView
             android:id="@+id/imageView2"
@@ -79,7 +81,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat_bold"
             android:text="@string/dermorax"
-            android:textColor="@color/nav_bar_pruple"
+            android:textColor="@color/text_purple"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

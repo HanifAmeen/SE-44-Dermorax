@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "202387238323",
+    "project_id": "dermorax-a9fa0",
+    "storage_bucket": "dermorax-a9fa0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:202387238323:android:8b087a4afac93330b3efc6",
+        "android_client_info": {
+          "package_name": "com.example.mobileapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "202387238323-t9s0gl9uuq7ffueiq0qtom1mra8h7sdq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHiV7MqhvHTG2zlPAFv0a6p-1U_3_hbYo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "202387238323-t9s0gl9uuq7ffueiq0qtom1mra8h7sdq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
