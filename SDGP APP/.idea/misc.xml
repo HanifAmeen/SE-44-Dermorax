@@ -67,13 +67,22 @@
         <entry key="..\:/Users/User/Desktop/REPOSITORY/SDGP APP/app/src/main/res/drawable/continue_button.xml" value="0.2415" />
         <entry key="..\:/Users/User/Desktop/REPOSITORY/SDGP APP/app/src/main/res/drawable/logout_button_dark_purple.xml" value="0.2415" />
         <entry key="..\:/Users/User/Desktop/REPOSITORY/SDGP APP/app/src/main/res/drawable/transparent_button.xml" value="0.2415" />
+        <entry key="..\:/Users/User/Desktop/REPOSITORY/SDGP APP/app/src/main/res/drawable/user_wel_bg2.xml" value="0.2265" />
+        <entry key="..\:/Users/User/Desktop/REPOSITORY/SDGP APP/app/src/main/res/drawable/user_welcome_bg.xml" value="0.2265" />
         <entry key="..\:/Users/User/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/activity_dialog.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/activity_menu.xml" value="0.18432971014492755" />
         <entry key="..\:/Users/User/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/activity_profile.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/fragment_home.xml" value="0.18432971014492755" />
         <entry key="..\:/Users/User/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/fragment_mole_map.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/fragment_new_prediction.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/User/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/fragment_news.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/User/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/fragment_previous_predictions.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/User/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/home_page.xml" value="0.18432971014492755" />
         <entry key="..\:/Users/User/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/login_page.xml" value="0.25" />
         <entry key="..\:/Users/User/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/signup_page.xml" value="0.2" />
         <entry key="..\:/Users/User/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/user_welcome.xml" value="0.25" />
         <entry key="..\:/Users/User/Desktop/REPOSITORY/SDGP APP/app/src/main/res/layout/welcome_page.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/REPOSITORY/SDGP APP/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2265" />
       </map>
     </option>
   </component>

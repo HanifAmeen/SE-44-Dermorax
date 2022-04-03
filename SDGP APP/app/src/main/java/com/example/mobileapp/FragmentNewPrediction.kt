@@ -22,7 +22,7 @@ import java.io.ByteArrayOutputStream
 import java.io.IOException
 
 
-class FragmentNewPrediction : Fragment()  {
+class  FragmentNewPrediction : Fragment()  {
 
     //crop activity
     private val cropActivityContract = object : ActivityResultContract<Any?, Uri?>(){
@@ -138,7 +138,7 @@ class FragmentNewPrediction : Fragment()  {
                 Toast.makeText(dialogPopup.context,"Please upload an image to predict",Toast.LENGTH_SHORT).show()
 
             }else {
-                predictBtn.text = "Processing......"
+                predictBtn.text = getString(R.string.processing)
 
 
 
@@ -168,7 +168,7 @@ class FragmentNewPrediction : Fragment()  {
                     dialogPopup.dismiss() //closes the popup
                 }
 
-
+                //*********************Saving image***********************************
             }
 
         }

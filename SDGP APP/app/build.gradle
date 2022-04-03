@@ -51,11 +51,15 @@ dependencies {
     implementation 'org.tensorflow:tensorflow-lite-support:0.3.1'
     implementation 'org.tensorflow:tensorflow-lite-metadata:0.3.1'
     implementation 'com.google.firebase:firebase-database:20.0.4'
-    implementation 'com.google.firebase:firebase-auth-ktx:21.0.2'
+    implementation 'com.google.firebase:firebase-auth-ktx:21.0.3'
     implementation 'com.google.firebase:firebase-database-ktx:20.0.4'
     implementation 'com.google.firebase:firebase-crashlytics-ktx:18.2.9'
     implementation 'com.google.firebase:firebase-analytics-ktx:20.1.2'
-    implementation 'de.hdodenhof:cicleimageview:3.1.0'
+    implementation 'com.google.firebase:firebase-storage-ktx:20.0.1'
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.1.0'
+
+
+//    implementation 'de.hdodenhof:cicleimageview:3.1.0'
 
     //  implementation 'org.tensorflow:tensorflow-lite-gpu:2.3.0'
 //    implementation 'com.android.support:appcompat-v7:25.0.0'
