@@ -4,19 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark_pruple"
-    android:id="@+id/home_fragment_layout">
+    android:layout_marginHorizontal="16dp"
+    android:id="@+id/nav_previous_predictions">
 
 
-    <TextView
-        android:id="@+id/id_title"
-        android:layout_width="169dp"
-        android:layout_height="72dp"
-        android:text="News Feed"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

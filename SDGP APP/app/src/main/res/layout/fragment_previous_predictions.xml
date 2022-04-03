@@ -4,19 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark_pruple"
+    android:orientation="vertical"
+    android:background="@color/light_pink"
     android:id="@+id/home_fragment_layout">
 
 
     <TextView
-        android:id="@+id/id_title"
-        android:layout_width="169dp"
-        android:layout_height="72dp"
-        android:text="Previous Predictions"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:text="@string/previous_predictions"
+        android:textAlignment="center"
+        android:textColor="#0D47A1"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        android:background="@drawable/user_wel_bg2"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="35dp" />
+
+    <ImageView
+        android:id="@+id/displayImage"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginVertical="30dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/textView3"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.246"
+        android:contentDescription="@string/todo" />
+
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

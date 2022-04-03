@@ -48,6 +48,7 @@ open class HomePage : AppCompatActivity() {
                 R.id.nav_home -> replaceFragment(fragmentHome)
                 R.id.nav_previous_predictions -> replaceFragment(fragmentPreviousPrediction)
 
+
                 else -> {replaceFragment(fragmentHome)}
             }
         }

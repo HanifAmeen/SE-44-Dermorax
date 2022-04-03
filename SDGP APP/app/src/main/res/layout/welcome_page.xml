@@ -95,7 +95,7 @@
         android:background="@drawable/transparent_button"
         android:gravity="center"
         android:outlineSpotShadowColor="@color/light_pruple"
-        android:text="@string/sign_in"
+        android:text="@string/log_in"
         android:textColor="#263238"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
