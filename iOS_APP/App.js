@@ -5,7 +5,7 @@ import { StatusBar } from 'react-native';
 function App() {
   // StatusBar.setBackgroundColor('#241332')
   return (
-    
+  
     <AppNavigator/>
 
   );

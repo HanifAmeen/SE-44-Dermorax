@@ -4,6 +4,7 @@ import { StatusBar } from 'react-native';
 import { StyleSheet, Text, View, Button, TouchableOpacity, TextInput} from 'react-native';
 import {MaterialCommunityIcons} from '@expo/vector-icons'
 import {MaterialIcons} from '@expo/vector-icons'
+import {LinearGradient} from 'expo-linear-gradient';
 
 import ContinueBtn from '../buttons/continueBtn'
 import RoundColorBtn from '../buttons/roundcolorButton'
@@ -18,7 +19,8 @@ const LogIN = ({navigation}) => {
 
   return (
     
-    <View style={styles.container}>
+    
+    <LinearGradient colors ={['#2a0447','#380842','#110014']} style={styles.container}>
      
       <View style={styles.titleContainer}>
         <Text style={styles.mainTitle}>DERMORAX</Text>
@@ -36,6 +38,10 @@ const LogIN = ({navigation}) => {
             <RoundColorBtn text='SIGNUP' />
           </View>
         
+        </View>
+
+        <View style={styles.welcomeContainer}>
+          <Text style={styles.welcomeText}>Register Your Account Here,</Text>
         </View>
 
         <View style={styles.linearInputArea}>
@@ -98,11 +104,16 @@ const LogIN = ({navigation}) => {
 
 
       <View style={styles.continueBtn}>
-        <ContinueBtn text='Continue' color='white'/>
+        <ContinueBtn text='Continue' color='white' onPress={() => navigation.navigate('Home')}/>
+      </View>
+
+      <View style={styles.bottomLine}>
+        <Text style={styles.bottomText}>POWERED BY EXPENDABLES</Text>
       </View>
 
       
-    </View>
+    
+    </LinearGradient>
     
   )
 }
@@ -123,14 +134,14 @@ const styles = StyleSheet.create({
   },
   mainTitle: {
     color:'#BCBCBC',
-    fontSize: 23,
+    fontSize: 26,
     marginTop:'0%',
     fontWeight:'700',
     
   },
 
   titleContainer: {
-    marginTop: '11%',
+    marginTop: '9%',
     alignItems: 'center',
     justifyContent: 'center',
 
@@ -156,6 +167,18 @@ const styles = StyleSheet.create({
     height: '36%',
     marginStart: 30,
     marginEnd:30,
+  },
+  welcomeContainer:{
+    width: '100%',
+    height: '9%',
+    justifyContent: 'center',
+    alignItems: 'center'
+
+  },
+  welcomeText:{
+    color: '#cc99de',
+    fontSize: 16,
+    
   },
 
   linearInputArea:{
@@ -195,6 +218,19 @@ const styles = StyleSheet.create({
     marginTop: '30%',
 
   },
+
+  bottomLine:{
+    marginTop: '12%',
+    width: '100%',
+    height: '5%',
+    justifyContent: 'center',
+    alignItems: 'center'
+
+  },
+  bottomText:{
+    color: '#BCBCBC',
+    fontSize: 10
+  }
   
   
 });
