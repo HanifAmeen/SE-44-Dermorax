@@ -1,5 +1,6 @@
-import { StyleSheet, ScrollView, TouchanbleOpacity,Text, View, Image, Alert} from 'react-native'
-import React, {useState} from 'react'
+import { StyleSheet, ScrollView, TouchanbleOpacity,Text, View, Image, Alert, uri} from 'react-native'
+import React, {useState, useEffect} from 'react'
+import * as ImagePicker from 'expo-image-picker'
 
 //import ImagePicker from 'react-native-image-crop-picker';
 import SwitchSelector from "react-native-switch-selector";
@@ -15,8 +16,74 @@ const toggleOptions = [
  
 const NewPredictionScreen = () => {
 
-    const [imageOption, setImageOption] = useState('capture')
-    const [btnText, setBtnText] = useState('PREDICT')
+    const [imageOption, setImageOption] = useState('capture');
+    const [btnText, setBtnText] = useState('PREDICT');
+    const [hasGalleryPermission, setHasGalleryPermission] = useState(null);
+    const [hasCameraPermission, setHasCameraPermission] = useState(null);
+    const [image,setImage] = useState(null);
+
+    useEffect(() => {
+        (async () => {
+            const galleryStatus = await ImagePicker.requestMediaLibraryPermissionsAsync()
+            setHasGalleryPermission( galleryStatus.status === 'granted')
+            const cameraStatus = await ImagePicker.requestCameraPermissionsAsync()
+            setHasCameraPermission( cameraStatus.status === 'granted')
+        }) ();
+    }, []);
+
+    const pickImage = async () => {
+        let result = ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.Images,
+            allowsEditing: true,
+            aspect: [1,1],
+            quality: 1,
+        })
+
+        if(!(await result).cancelled){
+            setImage(result._W.uri)
+            console.log(JSON.stringify(result))
+        }
+        if(hasGalleryPermission===false){
+            return alert('No Access to Internal Storage')
+        }
+
+       
+        
+    };
+
+    const captureImage = async () => {
+        let result = ImagePicker.launchCameraAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.Images,
+            allowsEditing: true,
+            aspect: [1,1],
+            quality:1,
+        })
+
+        if(!(await result).cancelled){
+            setImage(result._W.uri)
+            console.log(JSON.stringify(result))
+        }else{
+            alert('No Image was Captured')
+        }
+        if(hasCameraPermission==false){
+            return alert('No Access to Camera')
+        }
+        
+        
+    };
+
+    function captureOrUploadImage(value){
+
+        if(value=='capture'){
+            captureImage()
+    
+        }else if(value=='upload'){
+            pickImage()
+            
+        }
+    }
+
+    
 
   return (
     <View style={styles.container} >
@@ -31,10 +98,9 @@ const NewPredictionScreen = () => {
                 initial={0}
                 selectedColor={'white'}
                 buttonColor={'#663c82'}
-                borderColor={'#c9abd1'}
-                backgroundColor={'#c9abd1'}
+                backgroundColor={'#dfc5e6'}
                 hasPadding
-                fontSize={20}
+                fontSize={17}
                 onPress = { value => [setImageOption(value),captureOrUploadImage(value)]}
                 
                 />
@@ -43,16 +109,14 @@ const NewPredictionScreen = () => {
 
        <View style={styles.imageViewContainer}>
             <Image
-            style={styles.imageView}
-            source={{
-            uri: 'https://th.bing.com/th/id/OIP.ajk2pbTiXf7j_hYsiBm4bwHaHI?pid=ImgDet&rs=1',
-            }}
+                style={styles.imageView}
+                source={{uri: image}}
             />
 
         </View>
 
         <View style={styles.predictBtn}>
-            <PredictBtn text={btnText} color='#8A56AC' onPress={()=> setBtnText('Processing.....')}></PredictBtn>
+            <PredictBtn text={btnText} color='#5f3878' onPress={()=> setBtnText('Processing.....')}></PredictBtn>
         </View>
         
     
@@ -63,23 +127,14 @@ const NewPredictionScreen = () => {
       
     </ScrollView>
     </View>
+
    
   )
 }
 
 export default NewPredictionScreen
 
-function captureOrUploadImage(value){
 
-    if(value=='capture'){
-        Alert.alert('capture','Success')
-        
-
-    }else if(value=='upload'){
-        alert('uploading')
-        
-    }
-}
 
 const styles = StyleSheet.create({
 
@@ -110,7 +165,7 @@ const styles = StyleSheet.create({
     imageViewContainer:{
         marginTop:'10%',
         width:'90%',
-        height:'40%',
+        height:'32.5%',
         shadowColor: "black",
         shadowOffset: {
             width: 10,
@@ -129,7 +184,7 @@ const styles = StyleSheet.create({
     predictBtn:{
         marginTop:'10%',
         width:'60%',
-        height:'6%',
+        height:'5%',
     },
 
 
