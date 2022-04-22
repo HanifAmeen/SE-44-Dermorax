@@ -152,12 +152,12 @@
                 app:layout_constraintTop_toTopOf="@+id/id_predictionView" />
 
             <Button
-                android:id="@+id/id_viewMoreInfo_btn"
+                android:id="@+id/id_save_image"
                 android:layout_width="271dp"
                 android:layout_height="58dp"
                 android:layout_marginTop="44dp"
                 android:background="@drawable/view_more_info_btn"
-                android:text="@string/view_more_information"
+                android:text="@string/save_image"
                 android:textColor="@color/grey_200"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.55"

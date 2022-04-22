@@ -1,6 +1,7 @@
 package com.example.mobileapp
 
 import android.app.Dialog
+import android.app.ProgressDialog
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
@@ -8,7 +9,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.provider.MediaStore
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,10 +16,12 @@ import android.widget.*
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContract
 import androidx.fragment.app.Fragment
+import com.google.firebase.storage.FirebaseStorage
 import com.theartofdev.edmodo.cropper.CropImage
-import org.w3c.dom.Text
 import java.io.ByteArrayOutputStream
 import java.io.IOException
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class  FragmentNewPrediction : Fragment()  {
@@ -50,6 +52,8 @@ class  FragmentNewPrediction : Fragment()  {
     private lateinit var predictionValueView : TextView
     private lateinit var percentageView:TextView
     private lateinit var statusView: TextView
+    private lateinit var saveImage: Button
+    private lateinit var imageUri : Uri
 
 
 
@@ -70,6 +74,8 @@ class  FragmentNewPrediction : Fragment()  {
         predictionValueView= view.findViewById(R.id.id_predictionView)
         percentageView= view.findViewById(R.id.id_percentage_view)
         statusView= view.findViewById(R.id.id_status_view)
+        saveImage = view.findViewById(R.id.id_save_image)
+
 
 
 
@@ -77,6 +83,7 @@ class  FragmentNewPrediction : Fragment()  {
         cropActivityResultLauncher = registerForActivityResult(cropActivityContract){
             it?.let { uri ->
                 imageView.setImageURI(uri)
+                imageUri = uri
 
                 try {
                     image = MediaStore.Images.Media.getBitmap(requireActivity().contentResolver, uri)
@@ -168,14 +175,43 @@ class  FragmentNewPrediction : Fragment()  {
                     dialogPopup.dismiss() //closes the popup
                 }
 
+
                 //*********************Saving image***********************************
             }
 
+
+        }
+        saveImage.setOnClickListener {
+            uploadImage()
         }
 
 
 
         return view
+
+    }
+
+    private fun uploadImage() {
+        val progressDialog = ProgressDialog(requireContext())
+        progressDialog.setMessage("Saving Image...")
+        progressDialog.setCancelable(false)
+        progressDialog.show()
+
+        val formatter = SimpleDateFormat("yyyy_MM_HH_mm_ss", Locale.getDefault())
+        val now = Date()
+        val fileName = formatter.format(now)
+        val storageReference = FirebaseStorage.getInstance().getReference("images/$fileName")
+
+        storageReference.putFile(imageUri).addOnSuccessListener {
+            imageView.setImageURI(null)
+            Toast.makeText(requireContext(), "Successfully uploaded", Toast.LENGTH_SHORT).show()
+            if (progressDialog.isShowing)progressDialog.dismiss()
+
+        }.addOnFailureListener {
+            if (progressDialog.isShowing)progressDialog.dismiss()
+            Toast.makeText(requireContext(), "Failed upload", Toast.LENGTH_SHORT).show()
+
+        }
 
     }
 
@@ -186,8 +222,19 @@ class  FragmentNewPrediction : Fragment()  {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode==cameraRequestId){
             image =data?.extras?.get("data") as Bitmap
-
             imageView.setImageBitmap(image)
+
+            val bytes = ByteArrayOutputStream()
+            image!!.compress(Bitmap.CompressFormat.JPEG, 100, bytes)
+            val path: String = MediaStore.Images.Media.insertImage(
+                requireContext().contentResolver,
+                image,
+                "Title",
+                null
+            )
+            imageUri = Uri.parse(path)
+
+
 
         }
 
