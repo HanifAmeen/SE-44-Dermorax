@@ -68,6 +68,7 @@
     <string name="todo">TODO</string>
     <string name="log_in">LOG IN</string>
     <string name="processing">Processing......</string>
+    <string name="save_image">Save Image</string>
 
 
 </resources>
