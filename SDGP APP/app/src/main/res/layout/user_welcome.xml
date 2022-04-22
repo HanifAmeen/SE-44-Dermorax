@@ -53,7 +53,7 @@
         android:layout_width="547dp"
         android:layout_height="169dp"
         android:layout_marginStart="36dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/user_wel_bg2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

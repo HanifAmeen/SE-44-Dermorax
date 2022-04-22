@@ -6,7 +6,7 @@ import android.graphics.BitmapFactory
 import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.mobileapp.ml.Irv2Sa
+import com.example.mobileapp.ml.IRV2
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.Interpreter
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
@@ -47,7 +47,7 @@ class Model(private val context: Context) : AppCompatActivity() {
         //model
 
         try {
-            val model = Irv2Sa.newInstance(context)
+            val model = IRV2.newInstance(context)
 
 //            if (model == null) Log.d("my2", "model is null")
             // Creates inputs for reference.

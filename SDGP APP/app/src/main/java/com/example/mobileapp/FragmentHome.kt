@@ -8,7 +8,6 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentController
 import androidx.fragment.app.FragmentManager
-import com.example.mobileapp.databinding.FragmentNewPredictionBinding
 import kotlin.system.exitProcess
 
 class FragmentHome : Fragment() {

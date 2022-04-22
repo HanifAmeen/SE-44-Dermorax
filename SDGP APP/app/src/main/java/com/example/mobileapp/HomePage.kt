@@ -18,7 +18,7 @@ open class HomePage : AppCompatActivity() {
     private val fragmentNewPrediction = FragmentNewPrediction()
     private val fragmentPreviousPrediction = FragmentPreviousPredictions()
     private val fragmentNews = FragmentNews()
-    private val fragmentMoleMap = FragmentMoleMap()
+    private val fragmentMoleMap = FragmentMoleMapFront()
     private val fragmentChatBot = FragmentChatBot()
     private var cameraAccessPermission = false
 
@@ -47,6 +47,7 @@ open class HomePage : AppCompatActivity() {
                 R.id.nav_mole_mapper -> replaceFragment(fragmentMoleMap)
                 R.id.nav_home -> replaceFragment(fragmentHome)
                 R.id.nav_previous_predictions -> replaceFragment(fragmentPreviousPrediction)
+
 
                 else -> {replaceFragment(fragmentHome)}
             }
