@@ -70,5 +70,10 @@
     <string name="processing">Processing......</string>
     <string name="save_image">Save Image</string>
 
+    <string name="mole_mapper">Mole Mapper</string>
+    <string name="front_view">Front View</string>
+    <string name="back_view">Back View</string>
+
+
 
 </resources>

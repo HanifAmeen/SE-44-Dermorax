@@ -18,7 +18,7 @@ open class HomePage : AppCompatActivity() {
     private val fragmentNewPrediction = FragmentNewPrediction()
     private val fragmentPreviousPrediction = FragmentPreviousPredictions()
     private val fragmentNews = FragmentNews()
-    private val fragmentMoleMap = FragmentMoleMap()
+    private val fragmentMoleMap = FragmentMoleMapFront()
     private val fragmentChatBot = FragmentChatBot()
     private var cameraAccessPermission = false
 
