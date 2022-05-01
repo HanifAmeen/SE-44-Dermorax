@@ -133,6 +133,7 @@ class SignupPage : AppCompatActivity() {
                 progressDialog.dismiss()
                 Toast.makeText(this, "Account created...", Toast.LENGTH_LONG).show()
                 val profileActivity = Intent(applicationContext, ProfileActivity::class.java)
+                profileActivity.putExtra("username",username)
                 startActivity(profileActivity)
 
             }

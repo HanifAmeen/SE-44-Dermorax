@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item1"
+        android:title="@string/home"
+
+        android:icon="@drawable/ic_home"/>
+    <item
+        android:id="@+id/item2"
+        android:title="@string/mole_map"
+        android:icon="@drawable/ic_mole_mapper"/>
+    <item
+        android:id="@+id/item3"
+        android:title="@string/chat_bot"
+        android:icon="@drawable/ic_chat_bot"/>
+    <item
+        android:id="@+id/item4"
+        android:title="@string/schedule"
+        android:icon="@drawable/ic_schedule"/>
+    <item
+        android:id="@+id/item5"
+        android:title="News Feed"
+        android:icon="@drawable/ic_news_feed"/>
+    <item
+        android:id="@+id/item6"
+        android:title="@string/contact_us"
+        android:icon="@drawable/ic_contact"/>
+    <item
+        android:id="@+id/item7"
+        android:title="About Us"/>
+
+</menu>

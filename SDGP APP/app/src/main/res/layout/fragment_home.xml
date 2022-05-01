@@ -54,6 +54,21 @@
                 app:layout_constraintTop_toBottomOf="@+id/id_btn_news_feed"
                 tools:ignore="TouchTargetSizeCheck" />
 
+            <Button
+                android:id="@+id/id_btn_schedule"
+                android:layout_width="240dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="27dp"
+                android:background="@drawable/main_btn_light"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="@string/schedule"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/id_btn_previous_predictions"
+                tools:ignore="TouchTargetSizeCheck" />
+
             <ImageView
                 android:id="@+id/id_notifications"
                 android:layout_width="80dp"
@@ -106,7 +121,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/id_btn_previous_predictions"
+                app:layout_constraintTop_toBottomOf="@+id/id_btn_schedule"
                 tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
             <TextView
