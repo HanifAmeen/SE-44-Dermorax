@@ -16,36 +16,63 @@
         android:label="Dermorax"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MobileAPP">
+        android:theme="@style/Theme.MobileAPP"
+        android:screenOrientation="portrait"
+        android:configChanges="keyboardHidden|orientation"
+        tools:ignore="LockedOrientationActivity">
 
         <activity
             android:theme="@style/Theme.Material3.Dark.NoActionBar"
             android:name=".Schedule"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation"
+            tools:ignore="LockedOrientationActivity"/>
         <activity
             android:name=".ProfileActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation"
+            tools:ignore="LockedOrientationActivity"/>
         <activity
             android:name=".Dialog"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation"
+            tools:ignore="LockedOrientationActivity"/>
         <activity
             android:name=".HomePage"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation"
+            tools:ignore="LockedOrientationActivity"/>
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" /> <!-- optional (needed if default theme has no action bar) -->
         <activity
             android:name=".UserWelcome"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation"
+            tools:ignore="LockedOrientationActivity"/>
         <activity
             android:name=".SignupPage"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation"
+            tools:ignore="LockedOrientationActivity"/>
         <activity
             android:name=".LoginPage"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation"
+            tools:ignore="LockedOrientationActivity"/>
         <activity
             android:name=".WelcomePage"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
