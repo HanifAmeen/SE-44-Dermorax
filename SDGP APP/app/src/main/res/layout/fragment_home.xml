@@ -67,7 +67,7 @@
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/id_btn_previous_predictions"
-                tools:ignore="TouchTargetSizeCheck" />
+                tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
             <ImageView
                 android:id="@+id/id_notifications"
@@ -89,7 +89,7 @@
                 android:layout_marginEnd="24dp"
                 android:fontFamily="@font/montserrat_bold"
                 android:gravity="center"
-                android:text="001"
+                android:text="@string/_001"
                 android:textColor="@color/white"
                 android:textSize="22sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -100,7 +100,7 @@
                 android:layout_width="240dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="27dp"
-                android:background="@drawable/main_btn_dark"
+                android:background="@drawable/main_btn_light"
                 android:fontFamily="@font/montserrat_medium"
                 android:text="@string/news_feed"
                 android:textColor="@color/white"
@@ -156,7 +156,7 @@
                 android:layout_marginTop="12dp"
                 android:fontFamily="@font/montserrat_bold"
                 android:gravity="center"
-                android:text="005"
+                android:text="@string/_005"
                 android:textColor="@color/white"
                 android:textSize="22sp"
                 app:layout_constraintEnd_toStartOf="@+id/id_count_non_cancerous"
@@ -197,7 +197,7 @@
                 android:layout_marginTop="12dp"
                 android:fontFamily="@font/montserrat_bold"
                 android:gravity="center"
-                android:text="003"
+                android:text="@string/_003"
                 android:textColor="@color/white"
                 android:textSize="22sp"
                 app:layout_constraintStart_toStartOf="parent"

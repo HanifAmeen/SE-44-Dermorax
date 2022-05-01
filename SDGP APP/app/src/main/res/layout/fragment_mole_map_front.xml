@@ -41,9 +41,9 @@
         android:layout_width="100dp"
         android:layout_height="30dp"
         android:layout_marginTop="16dp"
+        android:background="@drawable/custom_button_logins"
         android:bottomLeftRadius="120sp"
         android:padding="2dp"
-        android:background="@drawable/custom_button_logins"
         android:text="@string/front_view"
         android:topRightRadius="280sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,7 +51,7 @@
         app:layout_constraintStart_toStartOf="parent"
 
         app:layout_constraintTop_toTopOf="@+id/imageView3"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TextContrastCheck" />
 
     <Button
         android:id="@+id/back_view_button"
@@ -60,7 +60,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/back_view"
         android:padding="2dp"
-        android:textColor="#263238"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.668"
         app:layout_constraintStart_toStartOf="parent"

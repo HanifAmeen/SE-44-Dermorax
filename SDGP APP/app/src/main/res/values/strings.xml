@@ -79,12 +79,9 @@
     <string name="open">open</string>
     <string name="close">Close</string>
     <string name="show_date_range_picker">Show Date Range Picker</string>
-
-
-    <string name="mole_mapper">Mole Mapper</string>
-    <string name="front_view">Front View</string>
-    <string name="back_view">Back View</string>
-
+    <string name="_001">001</string>
+    <string name="_005">005</string>
+    <string name="_003">003</string>
 
 
 </resources>
