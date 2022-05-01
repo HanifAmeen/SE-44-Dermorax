@@ -52,6 +52,7 @@ class LoginPage : AppCompatActivity() {
         binding.signUpButton.setOnClickListener {
             val profileActivity = (Intent(this, SignupPage::class.java))
             profileActivity.putExtra("username",username)
+            startActivity(profileActivity)
         }
 
         //Handle click, begin login
