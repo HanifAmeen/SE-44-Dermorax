@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/User/Desktop/Repository/SDGP APP/app/src/main/res/layout/activity_dialog.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/Repository/SDGP APP/app/src/main/res/layout/activity_profile.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/Repository/SDGP APP/app/src/main/res/layout/activity_schedule.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/Repository/SDGP APP/app/src/main/res/layout/fragment_chatbot.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/Repository/SDGP APP/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/Repository/SDGP APP/app/src/main/res/layout/fragment_mole_map.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/Repository/SDGP APP/app/src/main/res/layout/fragment_mole_map_back.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/Repository/SDGP APP/app/src/main/res/layout/fragment_mole_map_front.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/Repository/SDGP APP/app/src/main/res/layout/fragment_new_prediction.xml" value="0.18840579710144928" />
+        <entry key="..\:/Users/User/Desktop/Repository/SDGP APP/app/src/main/res/layout/fragment_news.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/Repository/SDGP APP/app/src/main/res/layout/fragment_previous_predictions.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/Repository/SDGP APP/app/src/main/res/layout/home_page.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/Repository/SDGP APP/app/src/main/res/layout/login_page.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/Repository/SDGP APP/app/src/main/res/layout/nav_header.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/Repository/SDGP APP/app/src/main/res/layout/signup_page.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/Repository/SDGP APP/app/src/main/res/layout/user_welcome.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/Repository/SDGP APP/app/src/main/res/layout/welcome_page.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/Repository/SDGP APP/app/src/main/res/menu-v26/bottom_nav_menu.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/Repository/SDGP APP/app/src/main/res/menu/nav_menu.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

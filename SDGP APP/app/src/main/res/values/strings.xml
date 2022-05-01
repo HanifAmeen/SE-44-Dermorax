@@ -69,6 +69,17 @@
     <string name="log_in">LOG IN</string>
     <string name="processing">Processing......</string>
     <string name="save_image">Save Image</string>
+    <string name="mole_mapper">Mole Mapper</string>
+    <string name="front_view">Front View</string>
+    <string name="back_view">Back View</string>
+    <string name="chat_bot">Chat Bot</string>
+    <string name="schedule">Schedule</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="about_us">About US</string>
+    <string name="open">open</string>
+    <string name="close">Close</string>
+    <string name="show_date_range_picker">Show Date Range Picker</string>
+
 
     <string name="mole_mapper">Mole Mapper</string>
     <string name="front_view">Front View</string>

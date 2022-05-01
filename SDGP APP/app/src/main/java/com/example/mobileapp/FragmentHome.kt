@@ -1,5 +1,6 @@
 package com.example.mobileapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +18,7 @@ class FragmentHome : Fragment() {
     private lateinit var previousPredictionsBtn : Button
     private lateinit var newsFeedBtn : Button
     private lateinit var exitBtn : Button
+    lateinit var schedule : Button
 
 
     override fun onCreateView(
@@ -27,10 +29,13 @@ class FragmentHome : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_home,container,false)
 
+
         val fragmentNewPrediction = FragmentNewPrediction()
         val fragmentPreviousPrediction = FragmentPreviousPredictions()
         val fragmentNews = FragmentNews()
 
+
+        schedule = view.findViewById(R.id.id_btn_schedule)
         newPredictionBtn = view.findViewById(R.id.id_btn_new_prediction)
         previousPredictionsBtn= view.findViewById(R.id.id_btn_previous_predictions)
         newsFeedBtn= view.findViewById(R.id.id_btn_news_feed)
@@ -45,6 +50,11 @@ class FragmentHome : Fragment() {
         newsFeedBtn.setOnClickListener {
             replaceFragment(fragmentNews)
         }
+        schedule.setOnClickListener {
+            startActivity(Intent(requireContext(),Schedule::class.java))
+
+        }
+        
         exitBtn.setOnClickListener {
             android.os.Process.killProcess(android.os.Process.myPid())
             exitProcess(2)

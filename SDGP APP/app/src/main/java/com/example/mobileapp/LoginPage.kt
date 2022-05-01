@@ -25,6 +25,8 @@ class LoginPage : AppCompatActivity() {
     private lateinit var firebaseAuth: FirebaseAuth
 //   private latent var databaseReference: DatabaseReference
 
+    private var username = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = LoginPageBinding.inflate(layoutInflater)
@@ -48,7 +50,8 @@ class LoginPage : AppCompatActivity() {
 
         //Handle click,open SignUp activity
         binding.signUpButton.setOnClickListener {
-            startActivity(Intent(this, SignupPage::class.java))
+            val profileActivity = (Intent(this, SignupPage::class.java))
+            profileActivity.putExtra("username",username)
         }
 
         //Handle click, begin login
@@ -116,11 +119,13 @@ class LoginPage : AppCompatActivity() {
 
             override fun onDataChange(snapshot: DataSnapshot) {
                 progressDialog.dismiss()
-
+                username = email
                 //Get user type
 //                val userType = snapshot.child("Users").child("userType").value
 //                if (userType == "user"){
-                    startActivity(Intent(this@LoginPage, ProfileActivity::class.java))
+                    val profileActivity = (Intent(this@LoginPage, ProfileActivity::class.java))
+                    profileActivity.putExtra("username",username)
+                    startActivity(profileActivity)
 //                }
 
             }
