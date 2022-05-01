@@ -1,12 +1,12 @@
 {
   "expo": {
-    "name": "iOS_APP",
-    "slug": "iOS_APP",
+    "name": "Dermorax",
+    "slug": "Dermorax",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/round_logo+bg.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/round_logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -21,7 +21,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/round_logo.png",
         "backgroundColor": "#FFFFFF"
       }
     },

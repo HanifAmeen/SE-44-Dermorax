@@ -81,5 +81,10 @@
     <string name="show_date_range_picker">Show Date Range Picker</string>
 
 
+    <string name="mole_mapper">Mole Mapper</string>
+    <string name="front_view">Front View</string>
+    <string name="back_view">Back View</string>
+
+
 
 </resources>
